@@ -102,9 +102,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SANDBOX_DEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)Dependencies\glad\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\imgui\include;$(SolutionDir)Dependencies\stb_image\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)include\Sandbox\;$(SolutionDir)include\Sandbox\Events;$(SolutionDir)Dependencies\glad\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\imgui\include;$(SolutionDir)Dependencies\stb_image\include;$(SolutionDir)layers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,9 +136,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SANDBOX_DEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)Dependencies\glad\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\imgui\include;$(SolutionDir)Dependencies\stb_image\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)include\Sandbox\;$(SolutionDir)include\Sandbox\Events;$(SolutionDir)Dependencies\glad\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\imgui\include;$(SolutionDir)Dependencies\stb_image\include;$(SolutionDir)layers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -167,12 +167,43 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Application.h" />
+    <ClInclude Include="Dependencies\imgui\include\imconfig.h" />
+    <ClInclude Include="Dependencies\imgui\include\imgui.h" />
+    <ClInclude Include="Dependencies\imgui\include\imgui_impl_glfw.h" />
+    <ClInclude Include="Dependencies\imgui\include\imgui_impl_opengl3.h" />
+    <ClInclude Include="Dependencies\imgui\include\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="Dependencies\imgui\include\imgui_internal.h" />
+    <ClInclude Include="Dependencies\imgui\include\imstb_rectpack.h" />
+    <ClInclude Include="Dependencies\imgui\include\imstb_textedit.h" />
+    <ClInclude Include="Dependencies\imgui\include\imstb_truetype.h" />
+    <ClInclude Include="include\Sandbox\Application.h" />
+    <ClInclude Include="include\Sandbox\Core.h" />
+    <ClInclude Include="include\Sandbox\Events\ApplicationEvent.h" />
+    <ClInclude Include="include\Sandbox\Events\Event.h" />
+    <ClInclude Include="include\Sandbox\ImGuiLayer.h" />
+    <ClInclude Include="include\Sandbox\Events\KeyEvent.h" />
+    <ClInclude Include="include\Sandbox\Layer.h" />
+    <ClInclude Include="include\Sandbox\Events\MouseEvent.h" />
+    <ClInclude Include="include\Sandbox\Window.h" />
+    <ClInclude Include="include\Sandbox\MenuLayer.h" />
+    <ClInclude Include="layers\TestLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dependencies\glad\src\glad.c" />
+    <ClCompile Include="Dependencies\imgui\include\imgui.cpp" />
+    <ClCompile Include="Dependencies\imgui\include\imgui_demo.cpp" />
+    <ClCompile Include="Dependencies\imgui\include\imgui_draw.cpp" />
+    <ClCompile Include="Dependencies\imgui\include\imgui_impl_glfw.cpp" />
+    <ClCompile Include="Dependencies\imgui\include\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="Dependencies\imgui\include\imgui_tables.cpp" />
+    <ClCompile Include="Dependencies\imgui\include\imgui_widgets.cpp" />
     <ClCompile Include="Dependencies\stb_image\src\stb.cpp" />
-    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="include\Sandbox\MenuLayer.cpp" />
+    <ClCompile Include="layers\TestLayer.cpp" />
+    <ClCompile Include="include\Sandbox\Application.cpp" />
+    <ClCompile Include="src\ExampleApp.cpp" />
+    <ClCompile Include="include\Sandbox\ImGuiLayer.cpp" />
+    <ClCompile Include="include\Sandbox\Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
