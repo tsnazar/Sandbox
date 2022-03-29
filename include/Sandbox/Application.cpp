@@ -47,16 +47,11 @@ void Application::Run()
 		m_ImGuiLayer->Begin();
 		if (m_CurrentLayer)
 		{
-			if (m_CurrentLayer != m_MenuLayer)
+			if (m_CurrentLayer != m_MenuLayer && ImGui::Button("<-"))
 			{
-				ImGui::Begin("Test");
-				if (ImGui::Button("<-"))
-				{
-					m_CurrentLayer->OnDetach();
-					delete m_CurrentLayer;
-					m_CurrentLayer = m_MenuLayer;
-				}
-				ImGui::End();
+				m_CurrentLayer->OnDetach();
+				delete m_CurrentLayer;
+				m_CurrentLayer = m_MenuLayer;
 			}
 			m_CurrentLayer->OnImGuiRender();
 		}
@@ -70,14 +65,25 @@ void Application::OnEvent(Event& event)
 {
 	EventDispatcher dispatcher(event);
 	dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+	if (event.Handled)
+		return;
+	
+	m_ImGuiLayer->OnEvent(event);
+	if (event.Handled)
+		return;
+
+	m_CurrentLayer->OnEvent(event);
 }
 
 bool Application::OnWindowClose(Event& event)
 {
-	m_ImGuiLayer->OnDetach();
-	delete m_CurrentLayer;
 	if (m_CurrentLayer != m_MenuLayer)
 		delete m_MenuLayer;
+
+	delete m_CurrentLayer;
+	m_CurrentLayer = nullptr;
+	
+	m_ImGuiLayer->OnDetach();
 	m_Running = false;
 	return true;
 }

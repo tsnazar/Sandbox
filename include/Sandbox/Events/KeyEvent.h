@@ -34,13 +34,3 @@ public:
 
 	EVENT_CLASS_TYPE(KeyReleased)
 };
-
-class  KeyTypedEvent : public KeyEvent
-{
-public:
-	KeyTypedEvent(int keycode)
-		: KeyEvent(keycode) {}
-
-	EVENT_CLASS_TYPE(KeyTyped);
-};
-

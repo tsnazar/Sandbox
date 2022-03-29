@@ -8,6 +8,7 @@
 #include <GLFW/glfw3.h>
 
 #include "Application.h"
+#include "Core.h"
 
 
 ImGuiLayer::ImGuiLayer()
@@ -60,10 +61,11 @@ void ImGuiLayer::End()
 
 void ImGuiLayer::OnEvent(Event& event)
 {
-	//dispatcher
+	EventDispatcher dispatcher(event);
+	dispatcher.Dispatch<MouseButtonPressedEvent>(GLCORE_BIND_EVENT_FN(ImGuiLayer::OnMouseButtonPressed));
 }
 
-bool ImGuiLayer::OnMouseButtonPressed()
+bool ImGuiLayer::OnMouseButtonPressed(MouseButtonPressedEvent& event)
 {
 	ImGuiIO io = ImGui::GetIO();
 	return io.WantCaptureMouse;

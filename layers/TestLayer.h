@@ -10,6 +10,7 @@ public:
 	void OnAttach() override;
 	void OnDetach() override;
 	void OnUpdate(float dt) override;
+	void OnEvent(Event& event) override;
 	void OnImGuiRender() override;
 private:
 	float m_Color[4];

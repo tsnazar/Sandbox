@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SANDBOX_DEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)include\Sandbox\;$(SolutionDir)include\Sandbox\Events;$(SolutionDir)Dependencies\glad\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\imgui\include;$(SolutionDir)Dependencies\stb_image\include;$(SolutionDir)layers</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)include\Sandbox\;$(SolutionDir)include\Sandbox\Events;$(SolutionDir)Dependencies\glad\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\imgui\include;$(SolutionDir)Dependencies\stb_image\include;$(SolutionDir)layers;$(SolutionDir)include\Utility</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,7 +138,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SANDBOX_DEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)include\Sandbox\;$(SolutionDir)include\Sandbox\Events;$(SolutionDir)Dependencies\glad\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\imgui\include;$(SolutionDir)Dependencies\stb_image\include;$(SolutionDir)layers</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)include\Sandbox\;$(SolutionDir)include\Sandbox\Events;$(SolutionDir)Dependencies\glad\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\imgui\include;$(SolutionDir)Dependencies\stb_image\include;$(SolutionDir)layers;$(SolutionDir)include\Utility</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -176,6 +176,9 @@
     <ClInclude Include="Dependencies\imgui\include\imstb_rectpack.h" />
     <ClInclude Include="Dependencies\imgui\include\imstb_textedit.h" />
     <ClInclude Include="Dependencies\imgui\include\imstb_truetype.h" />
+    <ClInclude Include="include\Sandbox\Input.h" />
+    <ClInclude Include="include\Utility\OrthographicCamera.h" />
+    <ClInclude Include="include\Utility\OrthographicCameraController.h" />
     <ClInclude Include="include\Sandbox\Application.h" />
     <ClInclude Include="include\Sandbox\Core.h" />
     <ClInclude Include="include\Sandbox\Events\ApplicationEvent.h" />
@@ -186,6 +189,9 @@
     <ClInclude Include="include\Sandbox\Events\MouseEvent.h" />
     <ClInclude Include="include\Sandbox\Window.h" />
     <ClInclude Include="include\Sandbox\MenuLayer.h" />
+    <ClInclude Include="include\Utility\Shader.h" />
+    <ClInclude Include="include\Utility\Utility.h" />
+    <ClInclude Include="layers\OrthoTest.h" />
     <ClInclude Include="layers\TestLayer.h" />
   </ItemGroup>
   <ItemGroup>
@@ -199,11 +205,17 @@
     <ClCompile Include="Dependencies\imgui\include\imgui_widgets.cpp" />
     <ClCompile Include="Dependencies\stb_image\src\stb.cpp" />
     <ClCompile Include="include\Sandbox\MenuLayer.cpp" />
+    <ClCompile Include="layers\OrthoTest.cpp" />
     <ClCompile Include="layers\TestLayer.cpp" />
     <ClCompile Include="include\Sandbox\Application.cpp" />
     <ClCompile Include="src\ExampleApp.cpp" />
     <ClCompile Include="include\Sandbox\ImGuiLayer.cpp" />
     <ClCompile Include="include\Sandbox\Window.cpp" />
+    <ClCompile Include="include\Sandbox\Input.cpp" />
+    <ClCompile Include="include\Utility\OrthographicCamera.cpp" />
+    <ClCompile Include="include\Utility\OrthographicCameraController.cpp" />
+    <ClCompile Include="include\Utility\Shader.cpp" />
+    <ClCompile Include="include\Utility\Utility.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,5 @@
 #include "TestLayer.h"
+#include "MouseEvent.h"
 
 #include <imgui.h>
 #include <glad/glad.h>
@@ -21,10 +22,12 @@ void TestLayer::OnUpdate(float dt)
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
+void TestLayer::OnEvent(Event& event)
+{
+}
+
 void TestLayer::OnImGuiRender()
 {
-	ImGui::Begin("Test");
 	ImGui::ColorEdit4("Clear color", m_Color);
 	ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-	ImGui::End();
 }

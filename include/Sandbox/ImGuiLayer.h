@@ -1,5 +1,6 @@
 #pragma once
 #include "Layer.h"
+#include "MouseEvent.h"
 
 class ImGuiLayer : public Layer
 {
@@ -14,7 +15,7 @@ public:
 	void End();
 
 	void OnEvent(Event& event) override;
-	bool OnMouseButtonPressed(); // add event
+	bool OnMouseButtonPressed(MouseButtonPressedEvent& event);
 private:
 	float m_Time = 0.0f;
 };

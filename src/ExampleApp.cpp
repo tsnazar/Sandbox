@@ -1,5 +1,6 @@
 #include "Application.h"
 #include "TestLayer.h"
+#include "OrthoTest.h"
 
 class ExampleApp : public Application
 {
@@ -8,6 +9,7 @@ public:
 		: Application()
 	{
 		RegisterLayer<TestLayer>("test");
+		RegisterLayer<OrthoTest>("ortho");
 	}
 };
 

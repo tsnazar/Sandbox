@@ -7,7 +7,6 @@
 #include "KeyEvent.h"
 #include "MouseEvent.h"
 
-
 static bool s_GLFWInitialized = false;
 
 Window* Window::Create(const WindowProps& props /*= WindowProps()*/)
@@ -55,6 +54,8 @@ void Window::Init(const WindowProps& props)
 			data.Width = width;
 			data.Height = height;
 
+			glViewport(0, 0, width, height);
+
 			WindowResizeEvent event(width, height);
 			data.EventCallback(event);
 	});
@@ -91,14 +92,6 @@ void Window::Init(const WindowProps& props)
 				break;
 			}
 			}
-	});
-
-	glfwSetCharCallback(m_Window, [](GLFWwindow* window, uint32_t keycode)
-	{
-			WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
-
-			KeyTypedEvent event(keycode);
-			data.EventCallback(event);
 	});
 
 	glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods)

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <functional>
 
 #ifdef SANDBOX_DEBUG
 #define GLCORE_ENABLE_ASSERTS
