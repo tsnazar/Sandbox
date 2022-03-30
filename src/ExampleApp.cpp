@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "TestLayer.h"
 #include "OrthoTest.h"
+#include "TestCube.h"
 
 class ExampleApp : public Application
 {
@@ -10,6 +11,7 @@ public:
 	{
 		RegisterLayer<TestLayer>("test");
 		RegisterLayer<OrthoTest>("ortho");
+		RegisterLayer<TestCube>("cube");
 	}
 };
 

@@ -47,6 +47,7 @@ void Window::Init(const WindowProps& props)
 
 	glfwSetWindowUserPointer(m_Window, &m_Data);
 	SetVsync(true);
+	//SetCursorHidden();
 
 	glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 	{
@@ -155,4 +156,18 @@ void Window::SetVsync(bool enabled /*= false*/)
 bool Window::IsVsync() const
 {
 	return m_Data.VSync;
+}
+
+void Window::SetCursorHidden(bool enabled /*= false*/)
+{
+	if (enabled)
+		glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	else 
+		glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+	m_Data.CursorHidden = enabled;
+}
+
+bool Window::IsCursorHidden() const
+{
+	return m_Data.CursorHidden;
 }

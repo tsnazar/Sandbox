@@ -31,8 +31,8 @@ private:
 private:
 	std::unique_ptr<Window> m_Window;
 	std::unique_ptr<ImGuiLayer> m_ImGuiLayer;
-	Layer* m_CurrentLayer = nullptr;
 	MenuLayer* m_MenuLayer;
+	Layer* m_CurrentLayer = nullptr;
 
 	bool m_Running = true;
 	float m_LastFrameTime = 0.0f;	

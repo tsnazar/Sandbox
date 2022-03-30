@@ -72,7 +72,8 @@ void Application::OnEvent(Event& event)
 	if (event.Handled)
 		return;
 
-	m_CurrentLayer->OnEvent(event);
+	if(m_CurrentLayer != nullptr)
+		m_CurrentLayer->OnEvent(event);
 }
 
 bool Application::OnWindowClose(Event& event)

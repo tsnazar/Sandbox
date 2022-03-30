@@ -189,9 +189,12 @@
     <ClInclude Include="include\Sandbox\Events\MouseEvent.h" />
     <ClInclude Include="include\Sandbox\Window.h" />
     <ClInclude Include="include\Sandbox\MenuLayer.h" />
+    <ClInclude Include="include\Utility\PerspectiveCamera.h" />
+    <ClInclude Include="include\Utility\PerspectiveCameraController.h" />
     <ClInclude Include="include\Utility\Shader.h" />
     <ClInclude Include="include\Utility\Utility.h" />
     <ClInclude Include="layers\OrthoTest.h" />
+    <ClInclude Include="layers\TestCube.h" />
     <ClInclude Include="layers\TestLayer.h" />
   </ItemGroup>
   <ItemGroup>
@@ -205,7 +208,10 @@
     <ClCompile Include="Dependencies\imgui\include\imgui_widgets.cpp" />
     <ClCompile Include="Dependencies\stb_image\src\stb.cpp" />
     <ClCompile Include="include\Sandbox\MenuLayer.cpp" />
+    <ClCompile Include="include\Utility\PerspectiveCamera.cpp" />
+    <ClCompile Include="include\Utility\PerspectiveCameraController.cpp" />
     <ClCompile Include="layers\OrthoTest.cpp" />
+    <ClCompile Include="layers\TestCube.cpp" />
     <ClCompile Include="layers\TestLayer.cpp" />
     <ClCompile Include="include\Sandbox\Application.cpp" />
     <ClCompile Include="src\ExampleApp.cpp" />

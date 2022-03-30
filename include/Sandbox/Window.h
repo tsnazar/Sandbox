@@ -35,6 +35,9 @@ public:
 	void SetVsync(bool enabled = false);
 	bool IsVsync() const;
 
+	void SetCursorHidden(bool enabled = false);
+	bool IsCursorHidden() const;
+
 	void* GetNativeWindow() const { return m_Window; }
 
 	static Window* Create(const WindowProps& props = WindowProps());
@@ -48,7 +51,7 @@ private:
 	{
 		std::string Title;
 		unsigned int Width, Height;
-		bool VSync;
+		bool VSync, CursorHidden;
 
 		EventCallbackFn EventCallback;
 	};

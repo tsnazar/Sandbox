@@ -24,7 +24,6 @@ private:
 private:
 	float m_AspectRatio;
 	float m_ZoomLevel = 1.0f;
-	float m_Delta = 0.0f;
 	OrthographicCamera m_Camera;
 
 	bool m_Rotation;

@@ -17,7 +17,7 @@ void OrthoTest::OnAttach()
 	GLCall(glEnable(GL_BLEND))
 	GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 
-	m_Shader = std::make_unique<Shader>("res/shaders/vertexShader.glsl", "res/shaders/fragmentShader.glsl");
+	m_Shader = std::make_unique<Shader>("res/shaders/basicVertex.glsl", "res/shaders/basicFragment.glsl");
 
 	GLCall(glCreateVertexArrays(1, &m_VAO));
 	GLCall(glBindVertexArray(m_VAO));
