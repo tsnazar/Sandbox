@@ -63,8 +63,7 @@ void TestCube::OnAttach()
 		22, 23, 20
 	};
 
-	GLCall(glEnable(GL_BLEND));
-	GLCall(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
+	GLCall(glEnable(GL_DEPTH_TEST));
 
 	m_Shader = std::make_unique<Shader>("res/shaders/basicVertex.glsl", "res/shaders/basicFragment.glsl");
 
@@ -86,7 +85,6 @@ void TestCube::OnAttach()
 void TestCube::OnDetach()
 {
 	GLCall(glDisable(GL_DEPTH_TEST));
-	GLCall(glDisable(GL_BLEND));
 	GLCall(glDeleteVertexArrays(1, &m_VAO));
 	GLCall(glDeleteBuffers(1, &m_VBO));
 	GLCall(glDeleteBuffers(1, &m_IBO));
@@ -94,7 +92,8 @@ void TestCube::OnDetach()
 
 void TestCube::OnUpdate(float dt)
 {
-	m_Camera.OnUpdate(dt);
+	if(m_CameraEnabled)
+		m_Camera.OnUpdate(dt);
 
 	GLCall(glClearColor(0.1f, 0.1f, 0.1f, 1.0f));
 	GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
@@ -110,31 +109,24 @@ void TestCube::OnUpdate(float dt)
 
 void TestCube::OnEvent(Event& event)
 {
-	//EventDispatcher dispatcher(event);
-	//dispatcher.Dispatch<KeyPressedEvent>(
-	//	[&](KeyPressedEvent& e)
-	//	{
-	//		if (e.GetKeyCode() == GLFW_KEY_F)
-	//		{
-	//			glfwSetInputMode(static_cast<GLFWwindow*>(Application::Get().GetWindow().GetNativeWindow()), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-	//			return true;
-	//		}
-	//		if (e.GetKeyCode() == GLFW_KEY_G)
-	//		{
-	//			glfwSetInputMode(static_cast<GLFWwindow*>(Application::Get().GetWindow().GetNativeWindow()), GLFW_CURSOR, GLFW_CURSOR_NORMAL);
-	//			return true;
-	//		}
-	//		return false;
-	//});
-	//
-	//if (event.Handled)
-	//	return;
+	EventDispatcher dispatcher(event);
+	dispatcher.Dispatch<KeyPressedEvent>([this](KeyPressedEvent& event) {
+		if (event.GetKeyCode() == GLFW_KEY_F)
+		{
+			m_CameraEnabled = !m_CameraEnabled;
+			Application::Get().GetWindow().SetCursorHidden(m_CameraEnabled);
+			m_Camera.SetFirstMouse(true);
+		}
+		return true;
+	});
 
-	m_Camera.OnEvent(event);
+	if (m_CameraEnabled)
+		m_Camera.OnEvent(event);
 }
 
 void TestCube::OnImGuiRender()
 {
 	ImGui::ColorEdit4("Square Base Color", glm::value_ptr(m_SquareColor));
+	ImGui::Text("Press F to enable\disable camera view");
 	ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 }

@@ -176,6 +176,7 @@
     <ClInclude Include="Dependencies\imgui\include\imstb_rectpack.h" />
     <ClInclude Include="Dependencies\imgui\include\imstb_textedit.h" />
     <ClInclude Include="Dependencies\imgui\include\imstb_truetype.h" />
+    <ClInclude Include="Dependencies\stb_image\include\stb_image.h" />
     <ClInclude Include="include\Sandbox\Input.h" />
     <ClInclude Include="include\Utility\OrthographicCamera.h" />
     <ClInclude Include="include\Utility\OrthographicCameraController.h" />
@@ -192,10 +193,15 @@
     <ClInclude Include="include\Utility\PerspectiveCamera.h" />
     <ClInclude Include="include\Utility\PerspectiveCameraController.h" />
     <ClInclude Include="include\Utility\Shader.h" />
+    <ClInclude Include="include\Utility\Texture.h" />
     <ClInclude Include="include\Utility\Utility.h" />
     <ClInclude Include="layers\OrthoTest.h" />
+    <ClInclude Include="layers\TestLightA.h" />
     <ClInclude Include="layers\TestCube.h" />
     <ClInclude Include="layers\TestLayer.h" />
+    <ClInclude Include="layers\TestLightB.h" />
+    <ClInclude Include="layers\TestLightC.h" />
+    <ClInclude Include="layers\TestLightD.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dependencies\glad\src\glad.c" />
@@ -210,10 +216,15 @@
     <ClCompile Include="include\Sandbox\MenuLayer.cpp" />
     <ClCompile Include="include\Utility\PerspectiveCamera.cpp" />
     <ClCompile Include="include\Utility\PerspectiveCameraController.cpp" />
+    <ClCompile Include="include\Utility\Texture.cpp" />
     <ClCompile Include="layers\OrthoTest.cpp" />
+    <ClCompile Include="layers\TestLightA.cpp" />
     <ClCompile Include="layers\TestCube.cpp" />
     <ClCompile Include="layers\TestLayer.cpp" />
     <ClCompile Include="include\Sandbox\Application.cpp" />
+    <ClCompile Include="layers\TestLightB.cpp" />
+    <ClCompile Include="layers\TestLightC.cpp" />
+    <ClCompile Include="layers\TestLightD.cpp" />
     <ClCompile Include="src\ExampleApp.cpp" />
     <ClCompile Include="include\Sandbox\ImGuiLayer.cpp" />
     <ClCompile Include="include\Sandbox\Window.cpp" />

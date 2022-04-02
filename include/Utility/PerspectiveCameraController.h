@@ -14,10 +14,11 @@ public:
 	void OnUpdate(float delta);
 	void OnEvent(Event& event);
 
+	void SetFirstMouse(bool state) { m_FirstMouse = state; }
+
 	PerspectiveCamera& GetCamera() { return m_Camera; }
 	const PerspectiveCamera& GetCamera() const { return m_Camera; }
 private:
-	bool OnKeyPressedEvent(KeyPressedEvent& event);
 	bool OnMouseMoved(MouseMovedEvent& event);
 	bool OnWindowResized(WindowResizeEvent& event);
 private:

@@ -1,14 +1,10 @@
 #version 330 core
 
-layout(location = 0) in vec4 position;
-layout(location = 1) in vec2 texCoord;
-
-out vec2 TexCoord;
+layout(location = 0) in vec3 position;
 
 uniform mat4 u_MVP;
 
 void main()
 {
-	gl_Position = u_MVP * position;
-	TexCoord = texCoord;
+	gl_Position = u_MVP * vec4(position, 1);
 };

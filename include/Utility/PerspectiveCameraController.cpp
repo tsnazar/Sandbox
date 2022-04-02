@@ -20,6 +20,8 @@ PerspectiveCameraController::~PerspectiveCameraController()
 
 void PerspectiveCameraController::OnUpdate(float delta)
 {
+	m_CameraPosition = m_Camera.GetPosition();
+
 	if (Input::IsKeyPressed(GLFW_KEY_A))
 	{
 		m_CameraPosition -= delta * m_CameraVelocity * m_Camera.GetRight();
@@ -43,21 +45,8 @@ void PerspectiveCameraController::OnUpdate(float delta)
 void PerspectiveCameraController::OnEvent(Event& event)
 {
 	EventDispatcher dispatcher(event);
-	dispatcher.Dispatch<KeyPressedEvent>(GLCORE_BIND_EVENT_FN(PerspectiveCameraController::OnKeyPressedEvent));
 	dispatcher.Dispatch<MouseMovedEvent>(GLCORE_BIND_EVENT_FN(PerspectiveCameraController::OnMouseMoved));
 	dispatcher.Dispatch<WindowResizeEvent>(GLCORE_BIND_EVENT_FN(PerspectiveCameraController::OnWindowResized));
-}
-
-bool PerspectiveCameraController::OnKeyPressedEvent(KeyPressedEvent& event)
-{
-	static bool enabled = false;
-	if (event.GetKeyCode() == GLFW_KEY_F)
-	{
-		Application::Get().GetWindow().SetCursorHidden(!enabled);
-		enabled = !enabled;
-		m_FirstMouse = true;
-	}
-	return true;
 }
 
 bool PerspectiveCameraController::OnMouseMoved(MouseMovedEvent& event)
@@ -75,6 +64,10 @@ bool PerspectiveCameraController::OnMouseMoved(MouseMovedEvent& event)
 
 	lastX = event.GetX();
 	lastY = event.GetY();
+
+	auto angles = m_Camera.GetAngles();
+	m_CameraYaw = angles.first;
+	m_CameraPitch = angles.second;
 
 	m_CameraYaw += 0.1 * offsetX;
 	m_CameraPitch += 0.1 * offsetY;
