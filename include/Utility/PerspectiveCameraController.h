@@ -16,6 +16,9 @@ public:
 
 	void SetFirstMouse(bool state) { m_FirstMouse = state; }
 
+	float GetVelocity() const { return m_CameraVelocity; }
+	void SetVelocity(float velocity) { m_CameraVelocity = velocity; }
+
 	PerspectiveCamera& GetCamera() { return m_Camera; }
 	const PerspectiveCamera& GetCamera() const { return m_Camera; }
 private:

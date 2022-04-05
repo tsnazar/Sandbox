@@ -104,7 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SANDBOX_DEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)include\Sandbox\;$(SolutionDir)include\Sandbox\Events;$(SolutionDir)Dependencies\glad\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\imgui\include;$(SolutionDir)Dependencies\stb_image\include;$(SolutionDir)layers;$(SolutionDir)include\Utility</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)include\Sandbox\;$(SolutionDir)include\Sandbox\Events;$(SolutionDir)Dependencies\glad\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\imgui\include;$(SolutionDir)Dependencies\stb_image\include;$(SolutionDir)layers;$(SolutionDir)include\Utility;$(SolutionDir)include\GLAbstractions</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,7 +138,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SANDBOX_DEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)include\Sandbox\;$(SolutionDir)include\Sandbox\Events;$(SolutionDir)Dependencies\glad\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\imgui\include;$(SolutionDir)Dependencies\stb_image\include;$(SolutionDir)layers;$(SolutionDir)include\Utility</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)include\Sandbox\;$(SolutionDir)include\Sandbox\Events;$(SolutionDir)Dependencies\glad\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\glm\include;$(SolutionDir)Dependencies\imgui\include;$(SolutionDir)Dependencies\stb_image\include;$(SolutionDir)layers;$(SolutionDir)include\Utility;$(SolutionDir)include\GLAbstractions</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -177,6 +177,10 @@
     <ClInclude Include="Dependencies\imgui\include\imstb_textedit.h" />
     <ClInclude Include="Dependencies\imgui\include\imstb_truetype.h" />
     <ClInclude Include="Dependencies\stb_image\include\stb_image.h" />
+    <ClInclude Include="include\GLAbstractions\Buffer.h" />
+    <ClInclude Include="include\GLAbstractions\ShadowMapFBO.h" />
+    <ClInclude Include="include\GLAbstractions\VertexArray.h" />
+    <ClInclude Include="include\GLAbstractions\VertexBufferLayout.h" />
     <ClInclude Include="include\Sandbox\Input.h" />
     <ClInclude Include="include\Utility\OrthographicCamera.h" />
     <ClInclude Include="include\Utility\OrthographicCameraController.h" />
@@ -192,16 +196,18 @@
     <ClInclude Include="include\Sandbox\MenuLayer.h" />
     <ClInclude Include="include\Utility\PerspectiveCamera.h" />
     <ClInclude Include="include\Utility\PerspectiveCameraController.h" />
-    <ClInclude Include="include\Utility\Shader.h" />
-    <ClInclude Include="include\Utility\Texture.h" />
-    <ClInclude Include="include\Utility\Utility.h" />
-    <ClInclude Include="layers\OrthoTest.h" />
-    <ClInclude Include="layers\TestLightA.h" />
-    <ClInclude Include="layers\TestCube.h" />
-    <ClInclude Include="layers\TestLayer.h" />
-    <ClInclude Include="layers\TestLightB.h" />
-    <ClInclude Include="layers\TestLightC.h" />
-    <ClInclude Include="layers\TestLightD.h" />
+    <ClInclude Include="include\GLAbstractions\Shader.h" />
+    <ClInclude Include="include\GLAbstractions\Texture.h" />
+    <ClInclude Include="include\Sandbox\GLDebug.h" />
+    <ClInclude Include="layers\CornellBox\CornellBox.h" />
+    <ClInclude Include="layers\Ortho\OrthoTest.h" />
+    <ClInclude Include="layers\TestLightA\TestLightA.h" />
+    <ClInclude Include="layers\Cube\TestCube.h" />
+    <ClInclude Include="layers\TestLightB\TestLightB.h" />
+    <ClInclude Include="layers\ShadowMap\TestShadowMap.h" />
+    <ClInclude Include="layers\TestLightC\TestLightC.h" />
+    <ClInclude Include="layers\TestLightD\TestLightD.h" />
+    <ClInclude Include="layers\PointShadows\TestPointShadows.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dependencies\glad\src\glad.c" />
@@ -213,26 +219,35 @@
     <ClCompile Include="Dependencies\imgui\include\imgui_tables.cpp" />
     <ClCompile Include="Dependencies\imgui\include\imgui_widgets.cpp" />
     <ClCompile Include="Dependencies\stb_image\src\stb.cpp" />
+    <ClCompile Include="include\GLAbstractions\Buffer.cpp" />
+    <ClCompile Include="include\GLAbstractions\ShadowMapFBO.cpp" />
+    <ClCompile Include="include\GLAbstractions\VertexArray.cpp" />
     <ClCompile Include="include\Sandbox\MenuLayer.cpp" />
     <ClCompile Include="include\Utility\PerspectiveCamera.cpp" />
     <ClCompile Include="include\Utility\PerspectiveCameraController.cpp" />
-    <ClCompile Include="include\Utility\Texture.cpp" />
-    <ClCompile Include="layers\OrthoTest.cpp" />
-    <ClCompile Include="layers\TestLightA.cpp" />
-    <ClCompile Include="layers\TestCube.cpp" />
-    <ClCompile Include="layers\TestLayer.cpp" />
+    <ClCompile Include="include\GLAbstractions\Texture.cpp" />
+    <ClCompile Include="layers\CornellBox\CornellBox.cpp" />
+    <ClCompile Include="layers\Ortho\OrthoTest.cpp" />
+    <ClCompile Include="layers\TestLightA\TestLightA.cpp" />
+    <ClCompile Include="layers\Cube\TestCube.cpp" />
     <ClCompile Include="include\Sandbox\Application.cpp" />
-    <ClCompile Include="layers\TestLightB.cpp" />
-    <ClCompile Include="layers\TestLightC.cpp" />
-    <ClCompile Include="layers\TestLightD.cpp" />
+    <ClCompile Include="layers\TestLightB\TestLightB.cpp" />
+    <ClCompile Include="layers\ShadowMap\TestShadowMap.cpp" />
+    <ClCompile Include="layers\TestLightC\TestLightC.cpp" />
+    <ClCompile Include="layers\TestLightD\TestLightD.cpp" />
+    <ClCompile Include="layers\PointShadows\TestPointShadows.cpp" />
     <ClCompile Include="src\ExampleApp.cpp" />
     <ClCompile Include="include\Sandbox\ImGuiLayer.cpp" />
     <ClCompile Include="include\Sandbox\Window.cpp" />
     <ClCompile Include="include\Sandbox\Input.cpp" />
     <ClCompile Include="include\Utility\OrthographicCamera.cpp" />
     <ClCompile Include="include\Utility\OrthographicCameraController.cpp" />
-    <ClCompile Include="include\Utility\Shader.cpp" />
-    <ClCompile Include="include\Utility\Utility.cpp" />
+    <ClCompile Include="include\GLAbstractions\Shader.cpp" />
+    <ClCompile Include="include\Sandbox\GLDebug.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\screenVertex.glsl" />
+    <None Include="layers\PointShadows\res\shadowDepthGeom.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

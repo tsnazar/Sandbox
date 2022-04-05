@@ -33,7 +33,7 @@ void Window::Init(const WindowProps& props)
 	if (!s_GLFWInitialized)
 	{
 		int success = glfwInit();
-		GLCORE_ASSERT(success);
+		SANDBOX_ASSERT(success);
 		s_GLFWInitialized = true;
 	}
 
@@ -41,13 +41,10 @@ void Window::Init(const WindowProps& props)
 
 	glfwMakeContextCurrent(m_Window);
 	int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-	GLCORE_ASSERT(status);
-
-	//add logging
+	SANDBOX_ASSERT(status);
 
 	glfwSetWindowUserPointer(m_Window, &m_Data);
 	SetVsync(true);
-	//SetCursorHidden();
 
 	glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 	{

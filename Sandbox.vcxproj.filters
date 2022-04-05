@@ -60,9 +60,6 @@
     <ClInclude Include="Dependencies\imgui\include\imstb_truetype.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="layers\TestLayer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Sandbox\Events\KeyEvent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -75,10 +72,10 @@
     <ClInclude Include="include\Sandbox\MenuLayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Utility\Shader.h">
+    <ClInclude Include="include\GLAbstractions\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Utility\Utility.h">
+    <ClInclude Include="include\Sandbox\GLDebug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Utility\OrthographicCamera.h">
@@ -87,7 +84,7 @@
     <ClInclude Include="include\Utility\OrthographicCameraController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="layers\OrthoTest.h">
+    <ClInclude Include="layers\Ortho\OrthoTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Sandbox\Input.h">
@@ -99,25 +96,46 @@
     <ClInclude Include="include\Utility\PerspectiveCameraController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="layers\TestCube.h">
+    <ClInclude Include="layers\Cube\TestCube.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="layers\TestLightA.h">
+    <ClInclude Include="layers\TestLightA\TestLightA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Utility\Texture.h">
+    <ClInclude Include="include\GLAbstractions\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Dependencies\stb_image\include\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="layers\TestLightB.h">
+    <ClInclude Include="layers\TestLightB\TestLightB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="layers\TestLightC.h">
+    <ClInclude Include="layers\TestLightC\TestLightC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="layers\TestLightD.h">
+    <ClInclude Include="layers\TestLightD\TestLightD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="layers\CornellBox\CornellBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLAbstractions\VertexBufferLayout.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLAbstractions\Buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLAbstractions\VertexArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="layers\PointShadows\TestPointShadows.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLAbstractions\ShadowMapFBO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="layers\ShadowMap\TestShadowMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -158,19 +176,16 @@
     <ClCompile Include="Dependencies\imgui\include\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="layers\TestLayer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="include\Sandbox\MenuLayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\ExampleApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\Utility\Shader.cpp">
+    <ClCompile Include="include\GLAbstractions\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\Utility\Utility.cpp">
+    <ClCompile Include="include\Sandbox\GLDebug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Utility\OrthographicCamera.cpp">
@@ -179,7 +194,7 @@
     <ClCompile Include="include\Utility\OrthographicCameraController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="layers\OrthoTest.cpp">
+    <ClCompile Include="layers\Ortho\OrthoTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="include\Sandbox\Input.cpp">
@@ -191,23 +206,45 @@
     <ClCompile Include="include\Utility\PerspectiveCameraController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="layers\TestCube.cpp">
+    <ClCompile Include="layers\Cube\TestCube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="layers\TestLightA.cpp">
+    <ClCompile Include="layers\TestLightA\TestLightA.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\Utility\Texture.cpp">
+    <ClCompile Include="include\GLAbstractions\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="layers\TestLightB.cpp">
+    <ClCompile Include="layers\TestLightB\TestLightB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="layers\TestLightC.cpp">
+    <ClCompile Include="layers\TestLightC\TestLightC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="layers\TestLightD.cpp">
+    <ClCompile Include="layers\TestLightD\TestLightD.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="layers\CornellBox\CornellBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\GLAbstractions\Buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\GLAbstractions\VertexArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="layers\PointShadows\TestPointShadows.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\GLAbstractions\ShadowMapFBO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="layers\ShadowMap\TestShadowMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\screenVertex.glsl" />
+    <None Include="layers\PointShadows\res\shadowDepthGeom.glsl" />
   </ItemGroup>
 </Project>

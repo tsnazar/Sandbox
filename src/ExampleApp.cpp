@@ -1,11 +1,13 @@
 #include "Application.h"
-#include "TestLayer.h"
-#include "OrthoTest.h"
-#include "TestCube.h"
-#include "TestLightA.h"
-#include "TestLightB.h"
-#include "TestLightC.h"
-#include "TestLightD.h"
+#include "CornellBox/CornellBox.h"
+#include "PointShadows/TestPointShadows.h"
+#include "ShadowMap/TestShadowMap.h"
+#include "Ortho/OrthoTest.h"
+#include "TestLightA/TestLightA.h"
+#include "TestLightB/TestLightB.h"
+#include "TestLightC/TestLightC.h"
+#include "TestLightD/TestLightD.h"
+
 
 class ExampleApp : public Application
 {
@@ -13,18 +15,20 @@ public:
 	ExampleApp()
 		: Application()
 	{
-		//RegisterLayer<TestLayer>("test");
-		RegisterLayer<OrthoTest>("ortho");
-		RegisterLayer<TestCube>("cube");
-		RegisterLayer<TestLightA>("LightA");
-		RegisterLayer<TestLightB>("LightB");
-		RegisterLayer<TestLightC>("LightC");
-		RegisterLayer<TestLightD>("LightD");
+		RegisterLayer<TestShadowMap>("TestShadowMap");
+		RegisterLayer<TestPointShadows>("TestPointShadows");
+		RegisterLayer<CornellBox>("CornellBox");
+		RegisterLayer<OrthoTest>("OrthoTest");
+		RegisterLayer<TestLightA>("TestLightA");
+		RegisterLayer<TestLightB>("TestLightB");
+		RegisterLayer<TestLightC>("TestLightC");
+		RegisterLayer<TestLightD>("TestLightD");
 	}
 };
 
 int main(void)
 {
 	std::unique_ptr<ExampleApp> app = std::make_unique<ExampleApp>();
+	app->GetWindow().SetVsync(false);
 	app->Run();
 }

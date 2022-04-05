@@ -5,7 +5,6 @@
 
 #include "Application.h"
 #include "Core.h"
-#include "TestLayer.h"
 #include "ApplicationEvent.h"
 
 #include <iostream>
@@ -17,12 +16,7 @@ Application* Application::s_Instance = nullptr;
 Application::Application(const std::string& name /*= "OpenGL Sandbox"*/, unsigned int width /*= 1280*/, unsigned int height /*= 720*/)
 	: m_MenuLayer(new MenuLayer(m_CurrentLayer))
 {
-	if (!s_Instance)
-	{
-		// init logging
-	}
-
-	GLCORE_ASSERT(!s_Instance);
+	SANDBOX_ASSERT(!s_Instance);
 	s_Instance = this;
 
 	m_Window = std::make_unique<Window>(WindowProps{ name, width, height });
