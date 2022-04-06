@@ -26,7 +26,7 @@ This demo implements ShadowMap for point light using cubemap as depth buffer to 
 
 ### CornellBox
 Simple CornellBox scene. Shadows implemented with the same method as shadows in TestShadowMap and here you can choose which light approximation method to use: either Phong
-or Blinn-Phong. Additionaly gamma correction is enabled.
+or Blinn-Phong. Additionally gamma correction is enabled.
 
 ![image](https://user-images.githubusercontent.com/70116589/161952079-3850b732-63bc-44f3-8dc3-7ee6397187c9.png)
 
