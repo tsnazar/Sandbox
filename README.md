@@ -1,7 +1,7 @@
 # Sandbox
 An OpenGL application with a couple of basic rendering demos.
 
-## Instalation 
+## Installation 
 
 ## Main Menu
 On application launch you should see an ImGui widget with several buttons. Each button corresponds to some demo, after clicking on it you will be able to see the demo.
