@@ -34,7 +34,7 @@ private:
 	{
 		std::unique_ptr<Texture> diffuse;
 		std::unique_ptr<Texture> specular;
-		float shininess;
+		float shininess = 1;
 	};
 
 	struct Light

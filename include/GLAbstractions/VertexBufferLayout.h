@@ -74,6 +74,8 @@ struct VertexBufferElement
 		case VertexBufferElementType::Int3:   return 3;
 		case VertexBufferElementType::Int4:   return 4;
 		}
+		SANDBOX_ASSERT(false);
+		return 0;
 	}
 };
 
@@ -111,5 +113,5 @@ private:
 	}
 private:
 	std::vector<VertexBufferElement> m_Elements;
-	unsigned int m_Stride;
+	unsigned int m_Stride = 0;
 };
