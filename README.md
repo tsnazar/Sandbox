@@ -2,6 +2,9 @@
 An OpenGL application with a couple of basic rendering demos.
 
 ## Installation 
+Only for Windows. Visual Studio 2019 is recommended.
+1. Start by cloning the repository with ```git clone https://github.com/tsnazar/Sandbox.git```
+2. Open Sandbox.sln and you're probably good to go.
 
 ## Main Menu
 On application launch you should see an ImGui widget with several buttons. Each button corresponds to some demo, after clicking on it you will be able to see the demo.
@@ -33,7 +36,7 @@ or Blinn-Phong. Additionally gamma correction is enabled.
 ![image](https://user-images.githubusercontent.com/70116589/161952111-9444c958-8bc6-4686-ae96-8da597228b96.png)
 
 ### OrthoTest
-Just a test for 2D orthographic camera and events handling(cube changes color on mouse button click).
+Just a test for 2D orthographic camera and events handling(rectangle changes color on mouse button click).
 
 ![image](https://user-images.githubusercontent.com/70116589/161952360-32cdad9b-df32-4be3-b04e-1d18056c69e7.png)
 
